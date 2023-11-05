@@ -18,6 +18,11 @@
   background-color: #fff;
   border-radius: 20px;
 }
+.notice {
+  text-align: center;
+  color: red;
+  font-size: 20px;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -87,4 +92,22 @@ input {
   object-fit: cover;
   border: 2px solid black;
   border-radius: 5px;
+}
+
+/* responsive breakpoint */
+@media (max-width: 991.98px) {
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 767.98px) {
+  .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

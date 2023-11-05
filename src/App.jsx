@@ -7,6 +7,7 @@ function App() {
   const [product, setProduct] = useState([]);
   const [select, setSelect] = useState([]);
 
+  // select handler
   const selectHandler = (data) => {
     const find = select.find((item) => item.id === data.id);
     if (!find) {
@@ -17,6 +18,7 @@ function App() {
     }
   };
 
+  // delete handler
   const deleteHandler = () => {
     const remaining = product.filter((item) => {
       const find = select.find((i) => i.id === item.id);
@@ -31,6 +33,7 @@ function App() {
     toast.success("delete successfully");
   };
 
+  // drag and drop functionality
   const dragStart = (e, dragIndex) => {
     e.dataTransfer.setData("dragIndex", dragIndex);
   };
@@ -48,6 +51,7 @@ function App() {
     setProduct(tempProduct);
   };
 
+  // product call from external api call
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
@@ -59,6 +63,10 @@ function App() {
   return (
     <div className="all">
       <div className="container">
+        <p className="notice">
+          Drag and drop feature implement raw js coding, not using any drag and
+          drop npm package
+        </p>
         <div className="header">
           <div className="title">
             {select.length ? (
