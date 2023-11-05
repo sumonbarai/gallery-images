@@ -108,9 +108,14 @@ function App() {
               </div>
             ))}
           <div draggable="false">
-            <div>
-              <img src="/images/placeholder-image.png" alt="image" width={40} />
-              <p>Add Images</p>
+            <div draggable="false">
+              <img
+                draggable="false"
+                src="/images/placeholder-image.png"
+                alt="image"
+                width={40}
+              />
+              <p draggable="false">Add Images</p>
             </div>
           </div>
         </div>
